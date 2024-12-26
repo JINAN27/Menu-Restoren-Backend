@@ -1,11 +1,11 @@
 const mongoose = require('mongoose');
-const { dbHost, dbPass, dbName, dbPort, dbUser } = require('../app/config');
+require('dotenv').config(); // Load .env file
 
-const dbURI = `mongodb://${dbUser}:${dbPass}@${dbHost}:${dbPort}/${dbName}?authSource=admin`;
+const dbURI = process.env.DB_URI; // Get the MongoDB URI from .env
 
-mongoose.connect(dbURI)
-  .then(() => console.log('MongoDB connected'))
-  .catch(err => console.log(`MongoDB connection error: ${err}`));
+mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(() => console.log('MongoDB Atlas connected'))
+  .catch(err => console.log(`MongoDB Atlas connection error: ${err}`));
 
 const db = mongoose.connection;
 
