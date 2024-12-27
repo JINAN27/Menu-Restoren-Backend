@@ -21,7 +21,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
 app.use(cors({
-  origin: 'https://menu-restoran-front-end.vercel.app/', // Alamat frontend
+  origin: 'https://menu-restoran-front-end.vercel.app', // Alamat frontend
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true
 }));
