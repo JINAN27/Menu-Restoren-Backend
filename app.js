@@ -21,7 +21,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
 app.use(cors({
-  origin: 'https://menu-restoran-front-f0ykuxl1v-nans-projects-91327688.vercel.app', // Alamat frontend 
+  origin: 'http://localhost:4000', // Alamat frontend 
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true
 }));
